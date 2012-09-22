@@ -48,6 +48,16 @@ class Sample extends IIC_Controller
 		$_data['page']			= 'sample';
 		$_data['title']			= $this->lang->line('page_sample');
 		
+		// Set content
+		$_data['content']['advance_search'] = TRUE;
+		$_data['content']['total'] = $this->content_model->count_content();
+		
+		// Set buttons
+		$_data['button']['create']['is_enable'] = FALSE;
+		$_data['button']['create']['label'] = 'Custom label';
+		$_data['button']['delete']['is_enable'] = FALSE;
+		$_data['button']['delete']['label'] = 'Custom label';
+		
 		// Set navigator
 		$_data['navigator'] = array();
 		array_push($_data['navigator'], array(
@@ -74,8 +84,6 @@ class Sample extends IIC_Controller
 		
 		// Set pagination
 		$this->load->library('pagination');
-		
-		$_data['content']['total'] = $this->content_model->count_content();
 
 		$_config['base_url']	= site_url().'/'.$_data['module'].'/'.$_data['controller'].'/index/';
 		$_config['total_rows']	= $_data['content']['total'];
