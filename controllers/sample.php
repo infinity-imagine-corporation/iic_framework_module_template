@@ -1,6 +1,7 @@
-<?php
-class Sample extends IIC_Controller 
-{	
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Sample extends IIC_Controller {
+		
 	// ------------------------------------------------------------------------
 	// Constructor
 	// ------------------------------------------------------------------------
@@ -49,7 +50,8 @@ class Sample extends IIC_Controller
 		$_data['title']			= $this->lang->line('page_sample');
 		
 		// Set content
-		$_data['content']['advance_search'] = TRUE;
+		$_data['content']['advance_search'] = FALSE;
+		$_data['content']['readonly'] = FALSE;
 		$_data['content']['total'] = $this->content_model->count_content();
 		
 		// Set buttons
@@ -72,13 +74,13 @@ class Sample extends IIC_Controller
 		// Set table haed
 		$_data['th'] = array();
 		array_push($_data['th'], array(
-										'axis'			=>'name',		
-										'label'			=>$this->lang->line('name'),	
+										'axis'			=> 'name',		
+										'label'			=> $this->lang->line('name'),	
 										'is_criteria'	=> TRUE
 									  ));
 		array_push($_data['th'], array(
-										'axis'			=>'is_enable',	
-										'label'			=>$this->lang->line('status'),	
+										'axis'			=> 'is_enable',	
+										'label'			=> $this->lang->line('status'),	
 										'is_criteria'	=> FALSE
 									  ));
 		

@@ -1,9 +1,10 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Sample_model extends IIC_Model {
 	
-    /**
-     * Setup database
-     */
+    // ------------------------------------------------------------------------
+    // Table
+    // ------------------------------------------------------------------------
     
     protected $table = array(
     							'main' => 'sample'
